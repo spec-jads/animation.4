@@ -36,35 +36,41 @@ nav ul{
 } */
 .per{
     position: absolute;
-    top:20%;
-    left: 40%;
-    transform: perspective(1000px) rotateY(-45deg);
-    height: 300px;
+    top:calc(50% - 150px);
+    left: calc(50% - 100px);
+    transform: perspective(1000px)rotateY(-45deg);
     width: 200px;
+    height: 300px;
     transform-style: preserve-3d;
+    
+    /* background-color: #fff; */
 }
 .per::before{
     content: '';
     position: absolute;
-    top: 0;
+    bottom: -100px;
     left: 0;
-    width: 100px;
+    width: 100%;
     height: 50px;
     background: #000;
     filter: blur(40px);
     opacity: 0.5;
     transform: rotateX(90deg);
+
 }
-.per div{
+.per .box{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: animate 5s linear infinite;
+    animation: lower 8s linear infinite;
+  
+
 }
-.per div span{
+
+span{
     position: absolute;
     top: 0;
     left: 0;
@@ -72,34 +78,29 @@ nav ul{
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg,#f1f1f1,#bbb,#f1f1f1);
-    border-radius: 20px;
+    border-radius: 19px;
 }
-.per div span:nth-child(1){
+.per span:nth-child(1){
     transform: rotateX(0deg);
 }
-.per div span:nth-child(2){
+.per span:nth-child(2){
     transform: rotateX(45deg);
 }
-.per div span:nth-child(3){
+.per span:nth-child(3){
     transform: rotateX(-45deg);
 }
-.per div span:nth-child(4){
+.per span:nth-child(4){
     transform: rotateX(90deg);
 }
-
-@keyframes animate{
+@keyframes lower{
     0%{
-        transform: perspective(1000px)rotateX(0deg);
+        transform: perspective(1000px) rotateX(0deg);
     }
-
-    100%{
-        transform: perspective(1000px)rotateX(359deg);
+    100%
+    {
+        transform: perspective(1000px) rotateX(359deg);
     }
-
 }
-
-
-
 /* 
 
 
